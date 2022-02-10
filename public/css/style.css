@@ -1,0 +1,27 @@
+.bg-darkblue {
+    background-color: rgb(0, 46, 110) !important;
+}
+.bg-orange {
+    background-color: rgb(241, 90, 34) !important;
+}
+@font-face {
+    font-family: "Font-Siemreap";
+    src: url("../asset/Siemreap-Regular.ttf");
+}
+.font-kh {
+    font-family: "Font-Siemreap";
+    font-size: 1rem;
+    font-weight: bold;
+}
+#chart i::before {
+    font-size: 60px;
+}
+table,
+td,
+th {
+    border: 0.1px solid rgb(0, 46, 110) !important;
+}
+.user-info-dropdown .dropdown .dropdown-toggle::after{
+	color: white !important;
+	font-size: 1.2rem !important;
+}
