@@ -250,7 +250,7 @@
             "lengthChange": true,
             "autoWidth": false,
             "ajax": {
-                "url": "http://192.168.2.12/leadtrackingsys/dashboard",
+                "url": "/dashboard",
                 "type": "GET",
             },
             columnDefs: [{
@@ -378,25 +378,25 @@
 
         if (minDate !== null && maxDate == null || maxDate !== null && minDate == null) {
             alert('Please select start date and end date correctly');
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/dashboard';
+            urlFilter = '/dashboard';
         } else if (minDate === null && maxDate === null && filterStatus === '' && filterBranch === '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/dashboard';
+            urlFilter = '/dashboard';
         } else if (minDate !== null && maxDate !== null && filterStatus === '' && filterBranch === '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/filter?min=' + minDate + '&max=' + maxDate + '&STATUS_NAME=&BRANCH_CODE=';
+            urlFilter = '/filter?min=' + minDate + '&max=' + maxDate + '&STATUS_NAME=&BRANCH_CODE=';
         } else if (minDate !== null && maxDate !== null && filterStatus !== '' && filterBranch === '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/filter?min=' + minDate + '&max=' + maxDate + '&STATUS_NAME=' + filterStatus + "&BRANCH_CODE=";
+            urlFilter = '/filter?min=' + minDate + '&max=' + maxDate + '&STATUS_NAME=' + filterStatus + "&BRANCH_CODE=";
         } else if (minDate !== null && maxDate !== null && filterStatus === '' && filterBranch !== '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/filter?min=' + minDate + '&max=' + maxDate + '&STATUS_NAME=&BRANCH_CODE=' + filterBranch;
+            urlFilter = '/filter?min=' + minDate + '&max=' + maxDate + '&STATUS_NAME=&BRANCH_CODE=' + filterBranch;
         } else if (minDate !== null && maxDate !== null && filterStatus !== '' && filterBranch !== '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/filter?min=' + minDate + '&max=' + maxDate + '&STATUS_NAME=' + filterStatus + '&BRANCH_CODE=' + filterBranch;
+            urlFilter = '/filter?min=' + minDate + '&max=' + maxDate + '&STATUS_NAME=' + filterStatus + '&BRANCH_CODE=' + filterBranch;
         } else if (minDate === null && maxDate === null && filterStatus !== '' && filterBranch === '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/filter?min=&max=&BRANCH_CODE=&STATUS_NAME=' + filterStatus;
+            urlFilter = '/filter?min=&max=&BRANCH_CODE=&STATUS_NAME=' + filterStatus;
         } else if (minDate === null && maxDate === null && filterBranch !== '' && filterStatus === '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/filter?min=&max=&STATUS_NAME=&BRANCH_CODE=' + filterBranch;
+            urlFilter = '/filter?min=&max=&STATUS_NAME=&BRANCH_CODE=' + filterBranch;
         } else if (minDate === null && maxDate === null && filterBranch !== '' && filterStatus !== '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/filter?min=&max=&STATUS_NAME=' + filterStatus + '&BRANCH_CODE=' + filterBranch;
+            urlFilter = '/filter?min=&max=&STATUS_NAME=' + filterStatus + '&BRANCH_CODE=' + filterBranch;
         } else {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/dashboard';
+            urlFilter = '/dashboard';
         }
         var tablenew = $("#customer").DataTable().clear().draw();
         tablenew.ajax.url(urlFilter).load();
@@ -410,7 +410,7 @@
         document.getElementById("filter-status").value = '';
         $("#filter-status").attr('disabled', false);
         var tablenew = $("#customer").DataTable().clear().draw();
-        tablenew.ajax.url('http://192.168.2.12/leadtrackingsys/dashboard').load();
+        tablenew.ajax.url('/dashboard').load();
         tablenew.ajax.reload();
     });
     $('.delete-confirm').on('click', function(event) {
@@ -439,7 +439,7 @@
 <script type="text/javascript">
     function OnSubmitForm() {
         if (document.pressed == 'Report') {
-            document.myform.action = "{{url('http://192.168.2.12/leadtrackingsys/export/logs/lastest_report')}}";
+            document.myform.action = "{{url('/export/logs/lastest_report')}}";
         } else {
             return false;
         }

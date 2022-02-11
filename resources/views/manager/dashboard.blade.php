@@ -285,7 +285,7 @@
             "lengthChange": true,
             "autoWidth": false,
             "ajax": {
-                "url": "http://192.168.2.12/leadtrackingsys/dashboard",
+                "url": "dashboard",
                 "type": "GET",
             },
             columnDefs: [{
@@ -298,7 +298,7 @@
                 }, {
                     targets: -1,
                     render: function(data, type, full, meta) {
-                        return '<a href=' + '"http://192.168.2.12/leadtrackingsys/customer/' + data + '/all_log"' + ' class="d-block text-center" title="View History"><i class="icon-copy fa fa-history" aria-hidden="true" style="font-size:25px;padding:none !important;"></i></a>';
+                        return '<a href=' + '"customer/' + data + '/all_log"' + ' class="d-block text-center" title="View History"><i class="icon-copy fa fa-history" aria-hidden="true" style="font-size:25px;padding:none !important;"></i></a>';
                     }
                 }, {
                     targets: 7,
@@ -421,41 +421,41 @@
 
         if (minDate !== null && maxDate == null || maxDate !== null && minDate == null) {
             alert('Please select start date and end date correctly.');
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/dashboard';
+            urlFilter = 'dashboard';
         } else if (minDate === null && maxDate === null && filterCreateBy === '' && filterBranch === '' && filterStatus === '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/dashboard';
+            urlFilter = 'dashboard';
         } else if (minDate !== null && maxDate !== null && filterCreateBy == '' && filterBranch == '' && filterStatus == '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=&BRANCH_CODE=&STATUS_NAME=';
+            urlFilter = 'filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=&BRANCH_CODE=&STATUS_NAME=';
         } else if (minDate === null && maxDate === null && filterCreateBy !== '' && filterBranch == '' && filterStatus == '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/filter?min=&max=&CREATE_BY=' + filterCreateBy + '&BRANCH_CODE=&STATUS_NAME=';
+            urlFilter = 'filter?min=&max=&CREATE_BY=' + filterCreateBy + '&BRANCH_CODE=&STATUS_NAME=';
 
         } else if (minDate === null && maxDate === null && filterBranch !== '' && filterStatus == '' && filterCreateBy == '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/filter?min=&max=&CREATE_BY=&BRANCH_CODE=' + filterBranch + '&STATUS_NAME=';
+            urlFilter = 'filter?min=&max=&CREATE_BY=&BRANCH_CODE=' + filterBranch + '&STATUS_NAME=';
 
         } else if (minDate === null && maxDate === null && filterBranch == '' && filterStatus !== '' && filterCreateBy == '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/filter?min=&max=&CREATE_BY=&BRANCH_CODE=&STATUS_NAME=' + filterStatus;
+            urlFilter = 'filter?min=&max=&CREATE_BY=&BRANCH_CODE=&STATUS_NAME=' + filterStatus;
         } else if (minDate === null && maxDate === null && filterBranch !== '' && filterStatus !== '' && filterCreateBy == '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/filter?min=&max=&CREATE_BY=&BRANCH_CODE=' + filterBranch + '&STATUS_NAME=' + filterStatus;
+            urlFilter = 'filter?min=&max=&CREATE_BY=&BRANCH_CODE=' + filterBranch + '&STATUS_NAME=' + filterStatus;
 
         } else if (minDate === null && maxDate === null && filterCreateBy !== '' && filterStatus !== '' && filterBranch == '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/filter?min=&max=&CREATE_BY=' + filterCreateBy + '&BRANCH_CODE=&STATUS_NAME=' + filterStatus;
+            urlFilter = 'filter?min=&max=&CREATE_BY=' + filterCreateBy + '&BRANCH_CODE=&STATUS_NAME=' + filterStatus;
 
         } else if (minDate !== null && maxDate !== null && filterStatus !== '' && filterBranch == '' && filterCreateBy == '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=&BRANCH_CODE=&STATUS_NAME=' + filterStatus;
+            urlFilter = 'filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=&BRANCH_CODE=&STATUS_NAME=' + filterStatus;
 
         } else if (minDate !== null && maxDate !== null && filterCreateBy !== '' && filterBranch == '' && filterStatus == '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=' + filterCreateBy + '&BRANCH_CODE=&STATUS_NAME=';
+            urlFilter = 'filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=' + filterCreateBy + '&BRANCH_CODE=&STATUS_NAME=';
 
         } else if (minDate !== null && maxDate !== null && filterCreateBy == '' && filterBranch !== '' && filterStatus == '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=&BRANCH_CODE=' + filterBranch + '&STATUS_NAME=';
+            urlFilter = 'filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=&BRANCH_CODE=' + filterBranch + '&STATUS_NAME=';
 
         } else if (minDate !== null && maxDate !== null && filterCreateBy == '' && filterBranch !== '' && filterStatus !== '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=&BRANCH_CODE=' + filterBranch + '&STATUS_NAME=' + filterStatus;
+            urlFilter = 'filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=&BRANCH_CODE=' + filterBranch + '&STATUS_NAME=' + filterStatus;
 
         } else if (minDate !== null && maxDate !== null && filterCreateBy !== '' && filterBranch == '' && filterStatus !== '') {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=' + filterCreateBy + '&BRANCH_CODE=&STATUS_NAME=' + filterStatus;
+            urlFilter = 'filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=' + filterCreateBy + '&BRANCH_CODE=&STATUS_NAME=' + filterStatus;
         } else {
-            urlFilter = 'http://192.168.2.12/leadtrackingsys/dashboard';
+            urlFilter = 'dashboard';
         }
         var tablenew = $("#customer").DataTable().clear().draw();
         tablenew.ajax.url(urlFilter).load();
@@ -473,14 +473,14 @@
         $("#filter-branch").attr('disabled', false);
         $("#filter-status").attr('disabled', false);
         var tablenew = $("#customer").DataTable().clear().draw();
-        tablenew.ajax.url('http://192.168.2.12/leadtrackingsys/dashboard').load();
+        tablenew.ajax.url('dashboard').load();
         tablenew.ajax.reload();
     });
 </script>
 <script type="text/javascript">
     function OnSubmitForm() {
         if (document.pressed == 'Report') {
-            document.myform.action = "{{url('http://192.168.2.12/leadtrackingsys/export/logs/lastest_report')}}";
+            document.myform.action = "{{url('export/logs/lastest_report')}}";
         } else {
             return false;
         }

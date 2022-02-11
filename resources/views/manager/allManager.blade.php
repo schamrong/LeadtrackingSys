@@ -121,7 +121,7 @@
 </script>
 <script type="text/javascript">
     function OnSubmitForm() {
-        document.myform.action = 'http://192.168.2.12/leadtrackingsys/export/logs/' + document.pressed + '/region';
+        document.myform.action = 'export/logs/' + document.pressed + '/region';
         console.log(document.myform.action);
         return true;
     }

@@ -23,7 +23,7 @@ class LastestReport implements FromCollection, ShouldAutoSize, WithCustomStartCe
     public function collection()
     {
         
-        return $array = collect($logs)->map(function ($log) {
+        return $array = collect()->map(function ($log) {
             return [
                 'Customer Name' => $log->FIRST_NAME . ' ' . $log->LAST_NAME,
                 'Tel' => $log->CONTACT_NUMBER,
@@ -58,10 +58,10 @@ class LastestReport implements FromCollection, ShouldAutoSize, WithCustomStartCe
                 $i = 4;
                 $logs = DB::select("SELECT TAGENT_CUSTOMERS.FIRST_NAME,TAGENT_CUSTOMERS.LAST_NAME,TAGENT_CUSTOMERS.GENDER,TAGENT_CUSTOMERS.CONTACT_NUMBER,TAGENT_CUST_FEEDBACKS.NAME as 'FEED_BACK',TAGENT_CUSTOMERS.AGENT_CODE,TAGENT_CUST_LOGS.CREATE_BY,TAGENT_CUST_LOGS.CREATE_DATE as 'LOG_DATE',TAGENT_CUST_LOGS.CUSTOMER_ID,TAGENT_CUST_LOGS.ID as 'LOGS_ID',TAGENT_STATUS.STATUS_NAME,REASON,TAGENT_CUSTOMERS.ADDRESS,TAGENT_CUSTOMERS.DISTRICT,TAGENT_CUSTOMERS.RELATION_CUST,TAGENT_CUSTOMERS.ESTIMATE_INCOME,TAGENT_CUSTOMERS.PROVINCE,TAGENT_CUST_LOGS.PRODUCT_CODE,TAGENT_CUST_LOGS.NEXT_STEP,TAGENT_CUSTOMERS.BRANCH_CODE FROM TAGENT_CUST_LOGS
                 INNER JOIN (
-                SELECT TAGENT_CUST_LOGS.CUSTOMER_ID, MAX(TAGENT_CUST_LOGS.[ID]) AS ID_Lastest
+                SELECT TAGENT_CUST_LOGS.CUSTOMER_ID, MAX(TAGENT_CUST_LOGS.ID) AS ID_Lastest
                 FROM TAGENT_CUST_LOGS  
                 GROUP BY TAGENT_CUST_LOGS.CUSTOMER_ID
-                ) tm ON TAGENT_CUST_LOGS.CUSTOMER_ID = tm.CUSTOMER_ID AND TAGENT_CUST_LOGS.ID = tm.ID_Lastest inner join TAGENT_CUSTOMERS on TAGENT_CUSTOMERS.ID = TAGENT_CUST_LOGS.CUSTOMER_ID inner join TAGENT_STATUS on TAGENT_CUST_LOGS.STATUS = TAGENT_STATUS.[ID] inner join TAGENT_CUST_FEEDBACKS on TAGENT_CUST_LOGS.CUST_FEEDBACK_CODE = TAGENT_CUST_FEEDBACKS.ID WHERE [TAGENT_CUST_LOGS].[CREATE_BY] = '" . Auth::user()->agent_code . "';");
+                ) tm ON TAGENT_CUST_LOGS.CUSTOMER_ID = tm.CUSTOMER_ID AND TAGENT_CUST_LOGS.ID = tm.ID_Lastest inner join TAGENT_CUSTOMERS on TAGENT_CUSTOMERS.ID = TAGENT_CUST_LOGS.CUSTOMER_ID inner join TAGENT_STATUS on TAGENT_CUST_LOGS.STATUS = TAGENT_STATUS.ID inner join TAGENT_CUST_FEEDBACKS on TAGENT_CUST_LOGS.CUST_FEEDBACK_CODE = TAGENT_CUST_FEEDBACKS.ID WHERE [TAGENT_CUST_LOGS].[CREATE_BY] = '" . Auth::user()->agent_code . "';");
                 $event->sheet->getDelegate()->getRowDimension(1)->setRowHeight(70);
                 $event->sheet->getDelegate()->mergeCells('A1:O1');
                 // cell 2

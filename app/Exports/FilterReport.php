@@ -30,7 +30,7 @@ class FilterReport implements FromCollection, ShouldAutoSize, WithCustomStartCel
      */
     public function collection()
     {
-        // $logs = DB::select("select *,TAGENT_CUST_LOGS.CREATE_DATE from TAGENT_CUST_LOGS inner join TAGENT_CUSTOMERS on CUSTOMER_ID = TAGENT_CUSTOMERS.ID inner join TAGENT_CUST_FEEDBACKS on CUST_FEEDBACK_CODE = TAGENT_CUST_FEEDBACKS.ID inner join TAGENT_STATUS on TAGENT_CUST_LOGS.STATUS = TAGENT_STATUS.ID where TAGENT_CUST_LOGS.CREATE_BY='" . Auth::user()->agent_code . "' and DATEDIFF(" . $this->filterDate . ",TAGENT_CUST_LOGS.CREATE_DATE,GETDATE())=0 ORDER BY TAGENT_CUST_LOGS.CREATE_DATE ASC;");
+        // $logs = DB::select("select *,TAGENT_CUST_LOGS.CREATE_DATE from TAGENT_CUST_LOGS inner join TAGENT_CUSTOMERS on CUSTOMER_ID = TAGENT_CUSTOMERS.ID inner join TAGENT_CUST_FEEDBACKS on CUST_FEEDBACK_CODE = TAGENT_CUST_FEEDBACKS.ID inner join TAGENT_STATUS on TAGENT_CUST_LOGS.STATUS = TAGENT_STATUS.ID where TAGENT_CUST_LOGS.CREATE_BY='" . Auth::user()->agent_code . "' and DATEDIFF(" . $this->filterDate . ",TAGENT_CUST_LOGS.CREATE_DATE,CURDATE())=0 ORDER BY TAGENT_CUST_LOGS.CREATE_DATE ASC;");
 
         return $array = collect($this->logs)->map(function ($log) {
             return [

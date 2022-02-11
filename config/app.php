@@ -52,9 +52,9 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://192.168.2.12/leadtrackingsys/public'),
+    'url' => env('APP_URL', ''),
 
-    'asset_url' => env('ASSET_URL', 'http://192.168.2.12/leadtrackingsys/public/'),
+    'asset_url' => env('ASSET_URL', ''),
 
     /*
     |--------------------------------------------------------------------------
