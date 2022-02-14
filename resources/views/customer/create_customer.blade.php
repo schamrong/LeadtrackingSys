@@ -100,7 +100,7 @@
         <div class="form-group row">
              <div class="col-md-6">
                 <label>Estimate Income</label>
-                <input class="form-control" type="text" name="ESTIMATE_INCOME" placeholder="Estimate Income" value="{{old('ESTIMATE_INCOME')}}">
+                <input class="form-control" type="number" step=0.01 name="ESTIMATE_INCOME" placeholder="1000,2000,3000" value="{{old('ESTIMATE_INCOME')}}">
             </div>
             <div class="col-md-6">
                 <label>Customer Status</label>

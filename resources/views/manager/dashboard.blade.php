@@ -421,41 +421,41 @@
 
         if (minDate !== null && maxDate == null || maxDate !== null && minDate == null) {
             alert('Please select start date and end date correctly.');
-            urlFilter = 'dashboard';
+            urlFilter = '/dashboard';
         } else if (minDate === null && maxDate === null && filterCreateBy === '' && filterBranch === '' && filterStatus === '') {
-            urlFilter = 'dashboard';
+            urlFilter = '/dashboard';
         } else if (minDate !== null && maxDate !== null && filterCreateBy == '' && filterBranch == '' && filterStatus == '') {
-            urlFilter = 'filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=&BRANCH_CODE=&STATUS_NAME=';
+            urlFilter = '/filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=&BRANCH_CODE=&STATUS_NAME=';
         } else if (minDate === null && maxDate === null && filterCreateBy !== '' && filterBranch == '' && filterStatus == '') {
-            urlFilter = 'filter?min=&max=&CREATE_BY=' + filterCreateBy + '&BRANCH_CODE=&STATUS_NAME=';
+            urlFilter = '/filter?min=&max=&CREATE_BY=' + filterCreateBy + '&BRANCH_CODE=&STATUS_NAME=';
 
         } else if (minDate === null && maxDate === null && filterBranch !== '' && filterStatus == '' && filterCreateBy == '') {
-            urlFilter = 'filter?min=&max=&CREATE_BY=&BRANCH_CODE=' + filterBranch + '&STATUS_NAME=';
+            urlFilter = '/filter?min=&max=&CREATE_BY=&BRANCH_CODE=' + filterBranch + '&STATUS_NAME=';
 
         } else if (minDate === null && maxDate === null && filterBranch == '' && filterStatus !== '' && filterCreateBy == '') {
-            urlFilter = 'filter?min=&max=&CREATE_BY=&BRANCH_CODE=&STATUS_NAME=' + filterStatus;
+            urlFilter = '/filter?min=&max=&CREATE_BY=&BRANCH_CODE=&STATUS_NAME=' + filterStatus;
         } else if (minDate === null && maxDate === null && filterBranch !== '' && filterStatus !== '' && filterCreateBy == '') {
-            urlFilter = 'filter?min=&max=&CREATE_BY=&BRANCH_CODE=' + filterBranch + '&STATUS_NAME=' + filterStatus;
+            urlFilter = '/filter?min=&max=&CREATE_BY=&BRANCH_CODE=' + filterBranch + '&STATUS_NAME=' + filterStatus;
 
         } else if (minDate === null && maxDate === null && filterCreateBy !== '' && filterStatus !== '' && filterBranch == '') {
-            urlFilter = 'filter?min=&max=&CREATE_BY=' + filterCreateBy + '&BRANCH_CODE=&STATUS_NAME=' + filterStatus;
+            urlFilter = '/filter?min=&max=&CREATE_BY=' + filterCreateBy + '&BRANCH_CODE=&STATUS_NAME=' + filterStatus;
 
         } else if (minDate !== null && maxDate !== null && filterStatus !== '' && filterBranch == '' && filterCreateBy == '') {
-            urlFilter = 'filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=&BRANCH_CODE=&STATUS_NAME=' + filterStatus;
+            urlFilter = '/filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=&BRANCH_CODE=&STATUS_NAME=' + filterStatus;
 
         } else if (minDate !== null && maxDate !== null && filterCreateBy !== '' && filterBranch == '' && filterStatus == '') {
-            urlFilter = 'filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=' + filterCreateBy + '&BRANCH_CODE=&STATUS_NAME=';
+            urlFilter = '/filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=' + filterCreateBy + '&BRANCH_CODE=&STATUS_NAME=';
 
         } else if (minDate !== null && maxDate !== null && filterCreateBy == '' && filterBranch !== '' && filterStatus == '') {
-            urlFilter = 'filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=&BRANCH_CODE=' + filterBranch + '&STATUS_NAME=';
+            urlFilter = '/filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=&BRANCH_CODE=' + filterBranch + '&STATUS_NAME=';
 
         } else if (minDate !== null && maxDate !== null && filterCreateBy == '' && filterBranch !== '' && filterStatus !== '') {
-            urlFilter = 'filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=&BRANCH_CODE=' + filterBranch + '&STATUS_NAME=' + filterStatus;
+            urlFilter = '/filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=&BRANCH_CODE=' + filterBranch + '&STATUS_NAME=' + filterStatus;
 
         } else if (minDate !== null && maxDate !== null && filterCreateBy !== '' && filterBranch == '' && filterStatus !== '') {
-            urlFilter = 'filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=' + filterCreateBy + '&BRANCH_CODE=&STATUS_NAME=' + filterStatus;
+            urlFilter = '/filter?min=' + minDate + '&max=' + maxDate + '&CREATE_BY=' + filterCreateBy + '&BRANCH_CODE=&STATUS_NAME=' + filterStatus;
         } else {
-            urlFilter = 'dashboard';
+            urlFilter = '/dashboard';
         }
         var tablenew = $("#customer").DataTable().clear().draw();
         tablenew.ajax.url(urlFilter).load();

@@ -52,7 +52,7 @@ $name=$users[0]->EN_NAME;
     <link rel="stylesheet" type="text/css" href="{{asset('src/plugins/datatables/css/responsive.bootstrap4.min.css')}}">
     @stack('style')
     <link rel="stylesheet" type="text/css" href="{{asset('vendors/styles/style.css')}}">
-    <!-- <link rel="stylesheet" type="text/css" href="{{asset('src/plugins/sweetalert2/sweetalert2.min.css')}}"> -->
+    <link rel="stylesheet" type="text/css" href="{{asset('src/plugins/sweetalert2/sweetalert2.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 
 </head>
