@@ -54,7 +54,7 @@
                     <th>Email</th>
                     <th>Create Date</th>
                     <th>Action</th>
-                    <th>Logs</th>
+                    <th>Logs Info</th>
                 </tr>
             </thead>
             <tbody>
@@ -68,13 +68,13 @@
                     <td>{{$customer->EMAIL}}</td>
                     <td>{{$customer->CREATE_DATE}}</td>
                     <td>
-                        <a class="mx-1" title="view" ​​ data-toggle="modal" data-target="#bd-example-modal-lg-{{$customer->ID}}" type="button"><img src="{{asset('asset/view.svg')}}" alt="" width="30"></a>
-                        <a data-toggle="modal" data-target="#bd-example-modal-lg-update-{{$customer->ID}}" title="edit" type="button"><img src="{{asset('asset/edit.svg')}}" alt="" width="25"></a>
-                        <a href="{{url('/customer/'.$customer->ID.'/delete')}}" title="remove" class="delete-confirm"><img src="{{asset('asset/delete.svg')}}" alt="" width="27"></a>
+                        <a class="mx-1" title="view" ​​ data-toggle="modal" data-target="#bd-example-modal-lg-{{$customer->ID}}" type="button"><i class="icon-copy fa fa-eye" aria-hidden="true" style="font-size:23px"></i></a>
+                        <a data-toggle="modal" data-target="#bd-example-modal-lg-update-{{$customer->ID}}" title="edit" type="button"><i class="icon-copy fa fa-edit" aria-hidden="true" style="font-size:23px"></i></a>
+                        <a href="{{url('/customer/'.$customer->ID.'/delete')}}" title="remove" class="delete-confirm"><i class="icon-copy fa fa-trash-o" aria-hidden="true" style="font-size:23px"></i></a>
                     </td>
                     <td>
-                        <a class="mx-1" data-toggle="modal" data-target="#bd-example-modal-lg-addlog-{{$customer->ID}}" type="button" title="Add Logs"><img src="{{asset('asset/add-file.svg')}}" alt="" width="30"></a>
-                        <a href="{{url('/customer/'.$customer->ID.'/all_log')}}" title="Log History"><img src="{{asset('asset/search-file.svg')}}" alt="" width="25"></a>
+                        <a class="mx-1 btn btn-primary text-white" data-toggle="modal" data-target="#bd-example-modal-lg-addlog-{{$customer->ID}}" type="button" title="Add Logs"><i class="icon-copy fa fa-file-text-o" aria-hidden="true"></i> Add Log</a>
+                        <a class="btn btn-info" href="{{url('/customer/'.$customer->ID.'/all_log')}}" title="Log History"><i class="icon-copy fa fa-file-text-o" aria-hidden="true"></i> History</a>
                     </td>
                 </tr>
                 <!-- View Customer Modal -->
@@ -389,7 +389,8 @@
     });
 
     $("#customer").DataTable({
-        "responsive": true,
+        // "responsive": true,
+        scrollX:true,
         "lengthChange": true,
         "autoWidth": false,
         columnDefs: [{

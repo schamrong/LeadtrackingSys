@@ -58,21 +58,20 @@ $name=$users[0]->EN_NAME;
 </head>
 
 <body>
-    <div class="header" style="background-color: rgb(0, 46, 110) !important;">
+    <div class="header">
         <div class="header-left">
             <div class="menu-icon fa fa-bars" style="color:rgb(241, 90, 34) !important;"></div>
         </div>
         <div class="header-right">
             <div class="user-info-dropdown">
                 <div class="dropdown">
-                    <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                        <span class="user-name mt-2 text-white">{{$name}}</span>
+                    <a class="dropdown-toggle text-black" href="#" role="button" data-toggle="dropdown">
+                        <span class="user-name mt-2">{{$name}}</span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                        <a class="dropdown-item" href="{{url('/profile')}}"><i class="menu-icon fas fa-user"></i> Profile</a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list text-black">
+                        <a class="dropdown-item" href="{{url('/profile')}}">Profile</a>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                            <i class="menu-icon fas fa-sign-out-alt"></i>{{ __('Logout') }}
+                                                     document.getElementById('logout-form').submit();">{{ __('Logout') }}
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -85,8 +84,8 @@ $name=$users[0]->EN_NAME;
     </div>
 
     <div class="left-side-bar">
-        <div class="brand-logo d-flex justify-content-center bg-orange align-items-center">
-            <p style="font-weight: bolder;color:white;margin:0px !important">PHILLIPLIFE ASSURANCE</p>
+        <div class="brand-logo d-flex justify-content-center bg-darkblue align-items-center">
+            <p style="font-weight: bolder;color:white;margin:0px !important">Philliplife Assurance</p>
             <div class="close-sidebar" data-toggle="left-sidebar-close">
                 <i class="ion-close-round"></i>
             </div>

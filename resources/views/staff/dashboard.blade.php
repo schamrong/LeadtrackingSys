@@ -33,7 +33,7 @@
             <form id="joiningDateSearch" method="GET" name="myform" onsubmit="return OnSubmitForm()">
                 @csrf
                 <div class="row">
-                    <div class="col">
+                    <div class="col-sm-12 col-md-3">
                         <div class="input-group mb-3">
                             <label class="col-12">Start Date</label>
 
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-sm-12 col-md-3">
                         <div class="input-group mb-3">
                             <label class="col-12">End Date</label>
                             <input class="form-control" type="date" id="max" name="max">
@@ -53,10 +53,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-sm-12 col-md-3">
                         <div class="input-group mb-3">
                             <label class="col-12">By Status</label>
-                            <select class="custom-select col-12" name="STATUS_NAME" id="filter-status">
+                            <select class="custom-select form-control col-12" name="STATUS_NAME" id="filter-status">
                                 <option value="">Choose...</option>
                                 @foreach($statuses as $status)
                                 <option value="{{$status->STATUS_NAME}}">{{$status->STATUS_NAME}}</option>
@@ -67,10 +67,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-sm-12 col-md-3">
                         <div class="input-group mb-3">
                             <label class="col-12">By Branch</label>
-                            <select class="custom-select col-12 select-2" name="BRANCH_CODE" id="filter-branch">
+                            <select class="custom-select form-control col-12 select-2" name="BRANCH_CODE" id="filter-branch">
                                 <option value="">Choose...</option>
                                 @foreach($branches as $branch)
                                 <option value="{{$branch->BRANCH_CODE}}">{{$branch->BRANCH_NAME}}</option>

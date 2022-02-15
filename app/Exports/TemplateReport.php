@@ -135,7 +135,11 @@ class TemplateReport implements FromCollection, ShouldAutoSize, WithCustomStartC
                                     'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
                                     'color' => ['argb' => '000000'],
                                 ],
-                            ],
+                            ], 'alignment' => [
+                                'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER,
+                                'vertical'     => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+                            ], 
+                            
                         ]);
                         
                         $i++;
@@ -148,6 +152,10 @@ class TemplateReport implements FromCollection, ShouldAutoSize, WithCustomStartC
                                 'color' => ['argb' => '000000'],
                             ],
                         ],
+                        'alignment' => [
+                            'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER,
+                            'vertical'     => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+                        ], 
                     ]);
                 }
             },

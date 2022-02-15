@@ -96,7 +96,9 @@ class LastestReport implements FromCollection, ShouldAutoSize, WithCustomStartCe
                                     'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
                                     'color' => ['argb' => '000000'],
                                 ],
-                            ],
+                            ],'alignment' => [
+                                'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER,
+                            ]
                         ]);
                         $i++;
                     }

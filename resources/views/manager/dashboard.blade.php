@@ -36,7 +36,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-sm-12 col-md-4">
                                 <div class="input-group mb-3">
                                     <label class="col-12">Start Date</label>
                                     <input class="form-control" type="date" id="min" name="min">
@@ -45,7 +45,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-sm-12 col-md-4">
                                 <div class="input-group mb-3">
                                     <label class="col-12">End Date</label>
 
@@ -55,11 +55,9 @@
                                     </div>
                                 </div>
                             </div>
-                            </div>
-                            <div class="row">
-
-                         
-                            <div class="col">
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-4">
                                 <div class="input-group mb-3">
                                     <label class="col-12">By IA/IP</label>
                                     <input type="text" class="form-control" name="CREATE_BY" placeholder="IA/IP CODE" id="filter-createby" value="{{old('CREATE_BY')}}">
@@ -68,7 +66,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-sm-12 col-md-4">
                                 <div class="input-group mb-3">
                                     <label class="col-12">By Branch</label>
                                     <select class="custom-select col-12 select-2" name="BRANCH_CODE" id="filter-branch">
@@ -82,7 +80,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-sm-12 col-md-4">
                                 <div class="input-group mb-3">
                                     <label class="col-12">By Status</label>
                                     <select class="custom-select col-12" name="STATUS_NAME" id="filter-status">
@@ -96,7 +94,7 @@
                                     </div>
                                 </div>
                             </div>
-                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
