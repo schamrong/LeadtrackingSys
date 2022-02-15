@@ -60,6 +60,8 @@
                         @elseif($user->status == 1)
                         <a href="{{url('/admin/user/'.$user->id.'/inactive')}}" class="btn btn-warning">Disable</a>
                         @endif
+
+                        <a href="{{url('/admin/user/'.$user->agent_code.'/reset_password')}}" class="btn btn-danger">Reset Password</a>
                     </td>
                 </tr>
                 @endforeach

@@ -66,6 +66,10 @@ Route::group(['middleware' => 'prevent-back-history'], function () {
         Route::post('/admin/create/user_ia', [App\Http\Controllers\AdminController::class, 'createUserIA']);
         Route::post('/admin/create/user_manager', [App\Http\Controllers\AdminController::class, 'createUserManager']);
         Route::post('/admin/create/user_head', [App\Http\Controllers\AdminController::class, 'createUserHead']);
+
+
+        Route::get('/admin/user/{id}/reset_password',[App\Http\Controllers\AdminController::class,'userResetPassword']);
+        Route::post('/admin/user/reset/{id}/password',[App\Http\Controllers\AdminController::class,'performResetPassword']);
     });
     // error
     Route::get('/error404', [App\Http\Controllers\HomeController::class, 'errorHandler']);

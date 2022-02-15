@@ -129,4 +129,17 @@ class AdminController extends Controller
         DB::table('TAGENT_CUSTOMERS')->where('AGENT_CODE',$request->cur_agent_code)->update(['AGENT_CODE'=>$request->new_agent_code]);
         return redirect()->back()->with('message','Transfer successfully');
     }
+
+    public function userResetPassword($id)  
+    {
+        $user = DB::table('TAGENT_REGISTORS')->where('agent_code',$id)->first();
+        // return ['user'=>$user];
+        return view('admin.resetPasswordForm',compact('user'));
+       
+    }
+
+    public function performResetPassword($id,Request $request){
+        DB::table('TAGENT_REGISTORS')->where('id',$id)->update(['password'=>Hash::make($request->password)]);
+        return redirect()->back()->with('message','Reset Successfully');
+    }
 }
