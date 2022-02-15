@@ -22,10 +22,10 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'prevent-back-history'], function () {
     Auth::routes();
+    Route::post('/login', [App\Http\Controllers\LoginController::class, 'login']);
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard']);
 
-    Route::post('/login', [App\Http\Controllers\LoginController::class, 'login']);
 
     // customer 
     Route::get('/customer', [App\Http\Controllers\CustomerController::class, 'index']);
